@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5451ED325A0475000E98D62 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5451ED225A0475000E98D62 /* History.swift */; };
 		A5BDB67C259B21AE009F1239 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BDB67B259B21AE009F1239 /* ScrumdingerApp.swift */; };
 		A5BDB67E259B21AE009F1239 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BDB67D259B21AE009F1239 /* MeetingView.swift */; };
 		A5BDB680259B21AF009F1239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BDB67F259B21AF009F1239 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5451ED225A0475000E98D62 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A5BDB678259B21AE009F1239 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BDB67B259B21AE009F1239 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		A5BDB67D259B21AE009F1239 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				A5BDB6D2259C67BF009F1239 /* DailyScrum.swift */,
 				A5BDB6E4259C6ED6009F1239 /* ScrumTimer.swift */,
 				A5BDB6EB259CA9A0009F1239 /* AVPlayer+Ding.swift */,
+				A5451ED225A0475000E98D62 /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				A5BDB6D4259C67C0009F1239 /* DailyScrum.swift in Sources */,
 				A5BDB67E259B21AE009F1239 /* MeetingView.swift in Sources */,
+				A5451ED325A0475000E98D62 /* History.swift in Sources */,
 				A5BDB6A0259B30AA009F1239 /* ScrumsView.swift in Sources */,
 				A5BDB6EC259CA9A0009F1239 /* AVPlayer+Ding.swift in Sources */,
 				A5BDB6A8259B399F009F1239 /* EditView.swift in Sources */,
