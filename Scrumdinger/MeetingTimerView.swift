@@ -65,6 +65,6 @@ struct MeetingTimerView: View {
 struct MeetingTimerView_Previews: PreviewProvider {
     @State static var speakers = [ScrumTimer.Speaker(name: "Kim", isCompleted: true), ScrumTimer.Speaker(name: "Bill", isCompleted: false)]
     static var previews: some View {
-        MeetingTimerView(speakers: $speakers, isRecording: .constant(true), scrumColor: Color("Design"))
+        MeetingTimerView(speakers: $speakers, isRecording: .constant(true), scrumColor: Color.yellow)
     }
 }
