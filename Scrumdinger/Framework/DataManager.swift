@@ -1,5 +1,5 @@
 //
-//  ScrumData.swift
+//  DataManager.swift
 //  Scrumdinger
 //
 //  Created by Sergey Moskvin on 02.01.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ScrumData: ObservableObject {
+class DataManager: ObservableObject {
     private static var documentsFolder: URL {
         do {
             return try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -19,6 +19,11 @@ class ScrumData: ObservableObject {
         return documentsFolder.appendingPathComponent("scrums.data")
     }
     @Published var scrums: [DailyScrum] = []
+    
+    static let instance = DataManager()
+    private init() {
+        load()
+    }
     
     func load() {
         DispatchQueue.global(qos: .background).async { [weak self] in

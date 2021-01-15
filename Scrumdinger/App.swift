@@ -1,5 +1,5 @@
 //
-//  ScrumdingerApp.swift
+//  App.swift
 //  Scrumdinger
 //
 //  Created by Sergey Moskvin on 29.12.2020.
@@ -8,17 +8,14 @@
 import SwiftUI
 
 @main
-struct ScrumdingerApp: App {
-    @ObservedObject private var data = ScrumData()
+struct Scrumdinger: App {
+    
+    @ObservedObject private var dataManager = DataManager.instance
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ScrumsView(scrums: $data.scrums) {
-                    data.save()
-                }
-            }
-            .onAppear {
-                data.load()
+                ScrumListView($dataManager.scrums)
             }
         }
     }

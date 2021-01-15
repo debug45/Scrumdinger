@@ -1,5 +1,5 @@
 //
-//  ScrumsView.swift
+//  ScrumListView.swift
 //  Scrumdinger
 //
 //  Created by Sergey Moskvin on 29.12.2020.
@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct ScrumsView: View {
+struct ScrumListView: View {
     @Binding var scrums: [DailyScrum]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresented = false
     @State private var newScrumData = DailyScrum.Data()
-    let saveAction: () -> Void
+    init(_ scrums: Binding<[DailyScrum]>) {
+        self._scrums = scrums
+    }
     var body: some View {
         List {
             ForEach(scrums) { scrum in
@@ -42,7 +44,7 @@ struct ScrumsView: View {
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive {
-                saveAction()
+                DataManager.instance.save()
             }
         }
     }
@@ -58,7 +60,7 @@ struct ScrumsView: View {
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ScrumsView(scrums: .constant(DailyScrum.data), saveAction: { })
+            ScrumListView(.constant(DailyScrum.data))
         }
     }
 }
