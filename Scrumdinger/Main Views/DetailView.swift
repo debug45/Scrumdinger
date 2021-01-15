@@ -21,10 +21,10 @@ struct DetailView: View {
                         .accessibilityLabel(Text("Start meeting"))
                 }
                 HStack {
-                    Label("Length", systemImage: "clock")
-                        .accessibilityLabel(Text("Meeting length"))
+                    Label("Duration", systemImage: "clock")
+                        .accessibilityLabel(Text("Meeting duration"))
                     Spacer()
-                    Text("\(scrum.lengthInMinutes) minutes")
+                    Text("\(scrum.durationInMinutes) minutes")
                 }
                 HStack {
                     Label("Color", systemImage: "paintpalette")
@@ -34,11 +34,11 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .ignore)
             }
-            Section(header: Text("Attendees")) {
-                ForEach(scrum.attendees, id: \.self) { attendee in
-                    Label(attendee, systemImage: "person")
+            Section(header: Text("Members")) {
+                ForEach(scrum.members, id: \.self) { member in
+                    Label(member, systemImage: "person")
                         .accessibilityLabel(Text("Person"))
-                        .accessibilityValue(Text(attendee))
+                        .accessibilityValue(Text(member))
                 }
             }
             Section(header: Text("History")) {

@@ -34,7 +34,7 @@ struct ScrumsView: View {
                     .navigationBarItems(leading: Button("Dismiss") {
                         isPresented = false
                     }, trailing: Button("Add") {
-                        let newScrum = DailyScrum(title: newScrumData.title, attendees: newScrumData.attendees, lengthInMinutes: Int(newScrumData.lengthInMinutes), color: newScrumData.color)
+                        let newScrum = DailyScrum(title: newScrumData.title, members: newScrumData.members, durationInMinutes: Int(newScrumData.durationInMinutes), color: newScrumData.color)
                         scrums.append(newScrum)
                         isPresented = false
                     })

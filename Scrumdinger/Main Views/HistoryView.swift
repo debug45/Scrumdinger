@@ -14,9 +14,9 @@ struct HistoryView: View {
             VStack(alignment: .leading) {
                 Divider()
                     .padding(.bottom)
-                Text("Attendees")
+                Text("Members")
                     .font(.headline)
-                Text(history.attendeeString)
+                Text(history.memberString)
                 if let transcript = history.transcript {
                     Text("Transcript")
                         .font(.headline)
@@ -31,13 +31,13 @@ struct HistoryView: View {
 }
 
 extension History {
-    var attendeeString: String {
-        ListFormatter.localizedString(byJoining: attendees)
+    var memberString: String {
+        ListFormatter.localizedString(byJoining: members)
     }
 }
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(history: History(attendees: ["Jon", "Darla", "Luis"], lengthInMinutes: 10, transcript: "Darla, would you like to start today? Sure, yesterday I reviewed Luis' PR and met with the design team to finalize the UI..."))
+        HistoryView(history: History(members: ["Jon", "Darla", "Luis"], durationInMinutes: 10, transcript: "Darla, would you like to start today? Sure, yesterday I reviewed Luis' PR and met with the design team to finalize the UI..."))
     }
 }

@@ -9,42 +9,42 @@ import SwiftUI
 
 struct EditView: View {
     @Binding var scrumData: DailyScrum.Data
-    @State private var newAttendee = ""
+    @State private var newMember = ""
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
                 TextField("Title", text: $scrumData.title)
                 HStack {
-                    Slider(value: $scrumData.lengthInMinutes, in: 5 ... 30, step: 1.0) {
-                        Text("Length")
+                    Slider(value: $scrumData.durationInMinutes, in: 5 ... 30, step: 1.0) {
+                        Text("Duration")
                     }
-                    .accessibilityLabel(Text("\(Int(scrumData.lengthInMinutes)) minutes"))
+                    .accessibilityLabel(Text("\(Int(scrumData.durationInMinutes)) minutes"))
                     Spacer()
-                    Text("\(Int(scrumData.lengthInMinutes)) minutes")
+                    Text("\(Int(scrumData.durationInMinutes)) minutes")
                         .accessibility(hidden: true)
                 }
                 ColorPicker("Color", selection: $scrumData.color)
                     .accessibilityLabel(Text("Color picker"))
             }
-            Section(header: Text("Attendees")) {
-                ForEach(scrumData.attendees, id: \.self) { attendee in
-                    Text(attendee)
+            Section(header: Text("Members")) {
+                ForEach(scrumData.members, id: \.self) { member in
+                    Text(member)
                 }
                 .onDelete { indices in
-                    scrumData.attendees.remove(atOffsets: indices)
+                    scrumData.members.remove(atOffsets: indices)
                 }
                 HStack {
-                    TextField("New Attendee", text: $newAttendee)
+                    TextField("New Member", text: $newMember)
                     Button(action: {
                         withAnimation {
-                            scrumData.attendees.append(newAttendee)
-                            newAttendee = ""
+                            scrumData.members.append(newMember)
+                            newMember = ""
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
-                            .accessibilityLabel(Text("Add attendee"))
+                            .accessibilityLabel(Text("Add member"))
                     }
-                    .disabled(newAttendee.isEmpty)
+                    .disabled(newMember.isEmpty)
                 }
             }
         }

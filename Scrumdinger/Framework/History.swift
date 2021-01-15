@@ -7,15 +7,15 @@ import Foundation
 struct History: Identifiable, Codable {
     let id: UUID
     let date: Date
-    var attendees: [String]
-    var lengthInMinutes: Int
+    var members: [String]
+    var durationInMinutes: Int
     var transcript: String?
 
-    init(id: UUID = UUID(), date: Date = Date(), attendees: [String], lengthInMinutes: Int, transcript: String? = nil) {
+    init(id: UUID = UUID(), date: Date = Date(), members: [String], durationInMinutes: Int, transcript: String? = nil) {
         self.id = id
         self.date = date
-        self.attendees = attendees
-        self.lengthInMinutes = lengthInMinutes
+        self.members = members
+        self.durationInMinutes = durationInMinutes
         self.transcript = transcript
     }
 }

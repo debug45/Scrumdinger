@@ -88,17 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				A5BDB67B259B21AE009F1239 /* App.swift */,
-				A5BDB67D259B21AE009F1239 /* MeetingView.swift */,
-				A5BDB69A259B2879009F1239 /* CardView.swift */,
-				A5BDB69F259B30AA009F1239 /* ScrumsView.swift */,
-				A5BDB6A3259B352D009F1239 /* DetailView.swift */,
-				A5BDB6A7259B399F009F1239 /* EditView.swift */,
-				A5BDB6D9259C6C42009F1239 /* MeetingHeaderView.swift */,
-				A5BDB6DF259C6E1E009F1239 /* ScrumProgressViewStyle.swift */,
-				A5BDB6E7259C7078009F1239 /* MeetingFooterView.swift */,
-				A5451EDC25A04E3D00E98D62 /* MeetingTimerView.swift */,
-				A5451EE325A0548400E98D62 /* HistoryView.swift */,
-				A5BDB68D259B2767009F1239 /* Models */,
+				A5F0AD0625B195B8003CF67C /* Main Views */,
+				A5F0AD0725B195BD003CF67C /* View Components */,
+				A5BDB68D259B2767009F1239 /* Framework */,
 				A5BDB6EE259CA9E4009F1239 /* Resources */,
 				A5BDB67F259B21AF009F1239 /* Assets.xcassets */,
 				A5F0ACFE25B19319003CF67C /* List.entitlements */,
@@ -116,9 +108,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A5BDB68D259B2767009F1239 /* Models */ = {
+		A5BDB68D259B2767009F1239 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				A5BDB6DF259C6E1E009F1239 /* ScrumProgressViewStyle.swift */,
 				A5BDB6D1259C67BF009F1239 /* Color+Codable.swift */,
 				A5BDB6D2259C67BF009F1239 /* DailyScrum.swift */,
 				A5BDB6E4259C6ED6009F1239 /* ScrumTimer.swift */,
@@ -127,7 +120,7 @@
 				A5451ED525A0491000E98D62 /* ScrumData.swift */,
 				A5451EE025A052A300E98D62 /* SpeechRecognizer.swift */,
 			);
-			path = Models;
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		A5BDB6EE259CA9E4009F1239 /* Resources */ = {
@@ -136,6 +129,29 @@
 				A5BDB6EF259CAA0E009F1239 /* Ding.wav */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A5F0AD0625B195B8003CF67C /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5BDB69F259B30AA009F1239 /* ScrumsView.swift */,
+				A5BDB6A3259B352D009F1239 /* DetailView.swift */,
+				A5BDB67D259B21AE009F1239 /* MeetingView.swift */,
+				A5BDB6A7259B399F009F1239 /* EditView.swift */,
+				A5451EE325A0548400E98D62 /* HistoryView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		A5F0AD0725B195BD003CF67C /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				A5BDB69A259B2879009F1239 /* CardView.swift */,
+				A5BDB6D9259C6C42009F1239 /* MeetingHeaderView.swift */,
+				A5451EDC25A04E3D00E98D62 /* MeetingTimerView.swift */,
+				A5BDB6E7259C7078009F1239 /* MeetingFooterView.swift */,
+			);
+			path = "View Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
